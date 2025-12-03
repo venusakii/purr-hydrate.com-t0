@@ -1,4 +1,3 @@
-import { Footer } from "@/components/footer"
 import { ArrowLeft } from "lucide-react"
 import Link from "next/link"
 
@@ -92,7 +91,6 @@ export default function PrivacyPolicyPage() {
           </div>
         </div>
       </div>
-      <Footer />
     </div>
   )
 }

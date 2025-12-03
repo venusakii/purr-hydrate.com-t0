@@ -1,4 +1,3 @@
-import { Footer } from "@/components/footer"
 import { ArrowLeft, Package, Truck, Globe } from "lucide-react"
 import Link from "next/link"
 
@@ -111,7 +110,6 @@ export default function ShippingPolicyPage() {
           </div>
         </div>
       </div>
-      <Footer />
     </div>
   )
 }

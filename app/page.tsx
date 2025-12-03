@@ -14,7 +14,6 @@ import { FAQ } from "@/components/faq"
 import { SocialProof } from "@/components/social-proof"
 import { Guarantee } from "@/components/guarantee"
 import { CTA } from "@/components/cta"
-import { Footer } from "@/components/footer"
 
 export default function Home() {
   return (
@@ -35,7 +34,6 @@ export default function Home() {
       <SocialProof />
       <Guarantee />
       <CTA />
-      <Footer />
     </main>
   )
 }

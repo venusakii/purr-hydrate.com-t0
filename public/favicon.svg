@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" fill="none">
+  <!-- Water drop background -->
+  <ellipse cx="64" cy="70" rx="50" ry="55" fill="#60C5F0"/>
+  <ellipse cx="64" cy="68" rx="45" ry="50" fill="#8DD7F7"/>
+  
+  <!-- Cat face -->
+  <circle cx="64" cy="60" r="30" fill="#FFB6D9"/>
+  
+  <!-- Cat ears -->
+  <path d="M 40 45 L 35 25 L 50 40 Z" fill="#FFB6D9"/>
+  <path d="M 88 45 L 93 25 L 78 40 Z" fill="#FFB6D9"/>
+  <path d="M 42 42 L 40 30 L 50 40 Z" fill="#FF8CC6"/>
+  <path d="M 86 42 L 88 30 L 78 40 Z" fill="#FF8CC6"/>
+  
+  <!-- Eyes -->
+  <ellipse cx="54" cy="58" rx="4" ry="6" fill="#333"/>
+  <ellipse cx="74" cy="58" rx="4" ry="6" fill="#333"/>
+  <circle cx="54" cy="56" r="1.5" fill="white"/>
+  <circle cx="74" cy="56" r="1.5" fill="white"/>
+  
+  <!-- Nose -->
+  <path d="M 64 65 L 61 68 L 67 68 Z" fill="#FF8CC6"/>
+  
+  <!-- Mouth -->
+  <path d="M 64 68 Q 58 72 54 70" stroke="#333" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+  <path d="M 64 68 Q 70 72 74 70" stroke="#333" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+  
+  <!-- Whiskers -->
+  <line x1="35" y1="60" x2="45" y2="58" stroke="#333" stroke-width="1" stroke-linecap="round"/>
+  <line x1="35" y1="65" x2="45" y2="65" stroke="#333" stroke-width="1" stroke-linecap="round"/>
+  <line x1="93" y1="60" x2="83" y2="58" stroke="#333" stroke-width="1" stroke-linecap="round"/>
+  <line x1="93" y1="65" x2="83" y2="65" stroke="#333" stroke-width="1" stroke-linecap="round"/>
+  
+  <!-- Water drops -->
+  <ellipse cx="30" cy="90" rx="5" ry="7" fill="#60C5F0"/>
+  <ellipse cx="98" cy="95" rx="4" ry="6" fill="#60C5F0"/>
+  <ellipse cx="50" cy="105" rx="3" ry="5" fill="#8DD7F7"/>
+</svg>

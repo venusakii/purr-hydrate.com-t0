@@ -3,36 +3,17 @@ import { Card } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { Check } from "lucide-react"
 import Link from "next/link"
+import { products } from "@/lib/products-data"
 
-const products = [
-  {
-    name: "PurrFlow Mini",
-    slug: "purrflow-mini",
-    price: 39.99,
-    image: "/cute-compact-white-cat-water-fountain-with-playful.jpg",
-    badge: "🐱 Best for Cats",
-    features: ["1.5L Capacity", "Perfect for 1-2 cats", "Compact & cute design", "3 flow settings"],
-    gradient: "from-pink-400 to-purple-400",
-  },
-  {
-    name: "PurrFlow Pro",
-    slug: "purrflow-pro",
-    price: 59.99,
-    image: "/modern-stylish-pet-water-fountain-with-happy-cat-a.jpg",
-    badge: "⭐ Most Popular",
-    popular: true,
-    features: ["3L Capacity", "For cats & dogs", "Stainless steel", "5 flow settings", "LED indicator"],
-    gradient: "from-purple-400 to-blue-400",
-  },
-  {
-    name: "PurrFlow Max",
-    slug: "purrflow-max",
-    price: 79.99,
-    image: "/large-premium-pet-water-fountain-with-playful-dog.jpg",
-    badge: "🐶 Best for Dogs",
-    features: ["5L Capacity", "Multi-pet households", "Premium materials", "App connected", "Auto-refill alert"],
-    gradient: "from-blue-400 to-teal-400",
-  },
+const productArray = Object.entries(products).map(([slug, data]) => ({
+  slug,
+  ...data,
+}))
+
+const featuredProducts = [
+  productArray.find((p) => p.slug === "veken-fountain") || productArray[2],
+  productArray.find((p) => p.slug === "catit-fountain") || productArray[5],
+  productArray.find((p) => p.slug === "petlibro-wireless") || productArray[10],
 ]
 
 export function ProductShowcase() {
@@ -62,16 +43,16 @@ export function ProductShowcase() {
         </div>
 
         <div className="grid md:grid-cols-3 gap-8">
-          {products.map((product, index) => (
+          {featuredProducts.map((product, index) => (
             <Card
-              key={index}
+              key={product.slug}
               className={`overflow-hidden border-4 ${
-                product.popular
+                index === 1
                   ? "ring-4 ring-primary/50 shadow-2xl scale-105 border-primary"
                   : "border-border hover:border-primary/50"
               } transition-all hover:-translate-y-1`}
             >
-              {product.popular && (
+              {index === 1 && (
                 <div className="bg-gradient-to-r from-primary to-secondary text-white text-center py-3 text-base font-display font-bold shadow-lg">
                   ⭐ Most Popular Choice ⭐
                 </div>
@@ -104,9 +85,9 @@ export function ProductShowcase() {
                 <Link href={`/product/${product.slug}`}>
                   <Button
                     className={`w-full rounded-full text-base font-bold shadow-lg hover:shadow-xl transition-all ${
-                      product.popular ? "" : "bg-gradient-to-r from-primary to-secondary"
+                      index === 1 ? "" : "bg-gradient-to-r from-primary to-secondary"
                     }`}
-                    variant={product.popular ? "default" : "default"}
+                    variant={index === 1 ? "default" : "default"}
                   >
                     Read More
                   </Button>
