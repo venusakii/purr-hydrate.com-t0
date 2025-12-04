@@ -63,6 +63,49 @@ export default function ProductPage({ params }: { params: { slug: string } }) {
                 <div className="text-xs font-bold">Warranty</div>
               </Card>
             </div>
+
+            {/* Product Specifications */}
+            <Card className="p-6 border-2 space-y-4">
+              <h3 className="text-xl font-display font-bold">Product Specifications</h3>
+              <div className="grid grid-cols-2 gap-4 text-sm">
+                {product.specs?.capacity && (
+                  <div>
+                    <p className="text-foreground/60 font-semibold">Capacity</p>
+                    <p className="font-bold">{product.specs.capacity}</p>
+                  </div>
+                )}
+                {product.specs?.dimensions && (
+                  <div>
+                    <p className="text-foreground/60 font-semibold">Dimensions</p>
+                    <p className="font-bold">{product.specs.dimensions}</p>
+                  </div>
+                )}
+                {product.specs?.material && (
+                  <div>
+                    <p className="text-foreground/60 font-semibold">Material</p>
+                    <p className="font-bold">{product.specs.material}</p>
+                  </div>
+                )}
+                {product.specs?.weight && (
+                  <div>
+                    <p className="text-foreground/60 font-semibold">Weight</p>
+                    <p className="font-bold">{product.specs.weight}</p>
+                  </div>
+                )}
+                {product.specs?.power && (
+                  <div>
+                    <p className="text-foreground/60 font-semibold">Power</p>
+                    <p className="font-bold">{product.specs.power}</p>
+                  </div>
+                )}
+                {product.specs?.warranty && (
+                  <div>
+                    <p className="text-foreground/60 font-semibold">Warranty</p>
+                    <p className="font-bold">{product.specs.warranty}</p>
+                  </div>
+                )}
+              </div>
+            </Card>
           </div>
 
           {/* Product Details */}
@@ -79,8 +122,6 @@ export default function ProductPage({ params }: { params: { slug: string } }) {
                 <span className="text-sm font-semibold text-foreground/70">(2,847 reviews)</span>
               </div>
 
-              
-
               <p className="text-lg text-foreground/80 leading-relaxed">{product.description}</p>
             </div>
 
@@ -96,6 +137,21 @@ export default function ProductPage({ params }: { params: { slug: string } }) {
                 ))}
               </ul>
             </div>
+
+            {/* Detailed Features */}
+            {product.detailedFeatures && product.detailedFeatures.length > 0 && (
+              <div className="space-y-4">
+                <h3 className="text-2xl font-display font-bold">What Makes This Special</h3>
+                <ul className="grid grid-cols-1 gap-3">
+                  {product.detailedFeatures.map((feature, i) => (
+                    <li key={i} className="flex items-center gap-3 text-base font-semibold">
+                      <Check className="h-6 w-6 text-secondary flex-shrink-0" />
+                      <span>{feature}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            )}
 
             {/* Action Buttons */}
             <div className="flex gap-4">
